@@ -8,6 +8,7 @@
   import OpenSource from '$lib/components/OpenSource.svelte';
   import Install from '$lib/components/Install.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { assets } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -17,10 +18,10 @@
   <meta property="og:title" content="Kaiden — AI coding agents. Governed, isolated, open." />
   <meta property="og:description" content="Run AI coding agents in isolated sandboxes with enterprise governance. Open source. Supports Claude Code, Goose, Cursor, OpenCode." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/icon.png" />
+  <meta property="og:image" content="{assets}/icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Kaiden — AI coding agents. Governed, isolated, open." />
-  <meta name="twitter:image" content="/icon.png" />
+  <meta name="twitter:image" content="{assets}/icon.png" />
   {@html `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
