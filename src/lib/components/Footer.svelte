@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { assets } from '$app/paths';
   const links = [
     {
       group: 'Project',
@@ -27,7 +28,7 @@
       <!-- brand -->
       <div>
         <div class="flex items-center gap-2.5 mb-4">
-          <img src="/icon.png" alt="Kaiden" width="28" height="28" class="rounded-lg" />
+          <img src="{assets}/icon.png" alt="Kaiden" width="28" height="28" class="rounded-lg" />
           <span class="font-semibold tracking-tight" style="color: var(--text-primary)">kaiden</span>
         </div>
         <p class="text-sm leading-relaxed max-w-xs" style="color: var(--text-muted)">

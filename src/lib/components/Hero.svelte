@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { assets } from '$app/paths';
   const DOWNLOAD_URL = 'https://github.com/openkaiden/prereleases/releases';
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
 
@@ -180,7 +181,7 @@
             class="absolute -bottom-6 -right-6 w-24 h-24 rounded-2xl border-2 shadow-xl p-1 flex items-center justify-center"
             style="border-color: var(--border); background: var(--bg-card)"
           >
-            <img src="/icon.png" alt="Kaiden mascot" width="80" height="80" class="rounded-xl" />
+            <img src="{assets}/icon.png" alt="Kaiden mascot" width="80" height="80" class="rounded-xl" />
           </div>
         </div>
       </div>
