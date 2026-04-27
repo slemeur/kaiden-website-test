@@ -1,6 +1,6 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme';
-  import { assets } from '$app/paths';
+  import { assets, base } from '$app/paths';
   import { onMount } from 'svelte';
 
   let scrolled = $state(false);
@@ -21,7 +21,7 @@
   style="background: {scrolled ? 'color-mix(in srgb, var(--bg) 90%, transparent)' : 'transparent'}; border-color: var(--border);"
 >
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5">
+    <a href="{base}" class="flex items-center gap-2.5">
       <img src="{assets}/icon.png" alt="Kaiden" width="32" height="32" class="rounded-lg" />
       <span class="font-semibold tracking-tight text-[15px]" style="color: var(--text-primary)">
         kaiden

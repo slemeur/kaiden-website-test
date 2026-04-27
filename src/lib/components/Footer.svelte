@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { assets } from '$app/paths';
+  import { assets, base } from '$app/paths';
   const links = [
     {
       group: 'Project',
@@ -15,7 +15,7 @@
       items: [
         { label: 'openkaiden', href: 'https://github.com/openkaiden' },
         { label: 'License (Apache 2.0)', href: 'https://github.com/openkaiden/kaiden/blob/main/LICENSE' },
-        { label: 'llms.txt', href: '/llms.txt' }
+        { label: 'llms.txt', href: `${base}/llms.txt` }
       ]
     }
   ];
