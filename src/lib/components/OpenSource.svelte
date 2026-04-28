@@ -26,7 +26,7 @@
           Kaiden is built by the team behind
           <a href="https://podman-desktop.io" target="_blank" rel="noopener noreferrer" class="podman-link">Podman Desktop</a>,
           with over 4 million downloads.
-          Same philosophy: open source, extensible, and yours to run however you want.
+          Same foundations, same philosophy: open source, extensible, and yours to run however you want.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
