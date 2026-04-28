@@ -37,6 +37,7 @@
 
       <!-- left: copy -->
       <div class="flex-1 text-center lg:text-left">
+
         <div
           class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border text-xs font-mono"
           style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted)"
@@ -45,7 +46,7 @@
             class="w-1.5 h-1.5 rounded-full animate-pulse"
             style="background: var(--accent)"
           ></span>
-          Open source · Apache 2.0
+          From the Podman Desktop Team · Open source · Apache 2.0
         </div>
 
         <h1
