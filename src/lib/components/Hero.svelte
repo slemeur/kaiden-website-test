@@ -37,7 +37,7 @@
 
       <!-- left: copy -->
       <div class="flex-1 text-center lg:text-left">
-      <p class="text-[11px] font-mono uppercase tracking-widest mb-3" style="color: var(--accent-text)">Desktop App for Agentic Developmentes </p>
+      <p class="text-[11px] font-mono uppercase tracking-widest mb-3" style="color: var(--accent-text)">Desktop App for Agentic Development </p>
         
         <div
           class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border text-xs font-mono"
