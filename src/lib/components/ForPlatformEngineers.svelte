@@ -26,6 +26,7 @@
       <p class="text-base leading-relaxed mb-8" style="color: #94afd4">
         Security and Platform teams set the rules once: which models, secrets, tools, and
         MCP servers are permitted. Then developers can build and run agents without needing to ask for permissions every time.
+        Connect to governance platforms that manage AI Assets
       </p>
       <ul class="space-y-2">
         {#each [
