@@ -18,14 +18,14 @@
   <div class="relative max-w-6xl mx-auto">
     <div class="max-w-2xl">
       <p class="text-[11px] font-mono uppercase tracking-widest mb-4" style="color: var(--accent)">
-        For platform engineers
+        For platform teams
       </p>
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-6 text-white">
         IT controls what developers can run.<br />
       </h2>
       <p class="text-base leading-relaxed" style="color: #94afd4">
-        Platform and security teams set the context once: which models, secrets, tools, and
-        MCP servers developers can use. Then they can build and run agents without needing to ask for permissions every time.
+        Security and Platform teams set the rules once: which models, secrets, tools, and
+        MCP servers are permitted. Then developers can build and run agents without needing to ask for permissions every time.
         Connect to governance platforms that manage AI Assets.
       </p>
     </div>
