@@ -29,6 +29,7 @@
         <p class="text-base leading-relaxed mb-8" style="color: #94afd4">
           Security and Platform teams set the rules once: which models, secrets, tools, and
           MCP servers are permitted. Then developers can build and run agents without needing to ask for permissions every time.
+          Connect to governance platforms that manage AI Assets.
         </p>
         <ul class="space-y-2">
           {#each [
@@ -86,7 +87,7 @@
 
         <!-- vertical connector -->
         <div class="flex items-center gap-3 ml-8 my-2">
-          <div class="w-px h-8" style="background: linear-gradient(to bottom, color-mix(in srgb, var(--accent) 30%, transparent), color-mix(in srgb, var(--accent) 15%, transparent))"></div>
+          <div class="w-px h-8" style="background: linear-gradient(to bottom, color-mix(in srgb, var(--accent) 30%, transparent), transparent)"></div>
           <span class="text-[9px] uppercase tracking-widest" style="color: #4a6070">enforces</span>
         </div>
 
