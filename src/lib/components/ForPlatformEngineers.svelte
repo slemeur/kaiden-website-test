@@ -23,11 +23,25 @@
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-6 text-white">
         IT controls what developers can run.<br />
       </h2>
-      <p class="text-base leading-relaxed" style="color: #94afd4">
+      <p class="text-base leading-relaxed mb-8" style="color: #94afd4">
         Security and Platform teams set the rules once: which models, secrets, tools, and
         MCP servers are permitted. Then developers can build and run agents without needing to ask for permissions every time.
-        Connect to governance platforms that manage AI Assets.
       </p>
+      <ul class="space-y-2">
+        {#each [
+          'Define allowed model providers',
+          'Curate and distribute skills across teams',
+          'Manage MCP servers & tools',
+          'Enforce governance via workspace config'
+        ] as item}
+          <li class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm" style="background: #ffffff08; color: #c8dff5">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0">
+              <polyline points="2,8 6,12 14,4"/>
+            </svg>
+            {item}
+          </li>
+        {/each}
+      </ul>
     </div>
   </div>
 </section>
