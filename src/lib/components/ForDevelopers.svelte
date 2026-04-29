@@ -1,6 +1,5 @@
 <script lang="ts">
   import { assets } from '$app/paths';
-  import { theme } from '$lib/stores/theme';
 
   const pillars = [
     {
@@ -57,12 +56,8 @@
             </div>
             <!-- image -->
             <div class="relative" style="height: 180px">
-              <img
-                src="{assets}/screenshots/{$theme === 'dark' ? pillar.img.dark : pillar.img.light}"
-                alt={pillar.title}
-                class="absolute inset-0 w-full h-full object-cover object-top"
-                on:error={(e) => { (e.currentTarget as HTMLImageElement).src = `${assets}/screenshots/${pillar.img.dark}`; }}
-              />
+              <img src="{assets}/screenshots/{pillar.img.dark}" alt={pillar.title} class="fd-shot-dark absolute inset-0 w-full h-full object-cover object-top" />
+              <img src="{assets}/screenshots/{pillar.img.light}" alt={pillar.title} class="fd-shot-light absolute inset-0 w-full h-full object-cover object-top" />
               <div class="absolute inset-0 pointer-events-none" style="box-shadow: inset 0 0 0 1px var(--border)"></div>
               <div class="absolute inset-x-0 bottom-0 h-20 pointer-events-none" style="background: linear-gradient(to bottom, transparent, var(--bg-card))"></div>
             </div>
@@ -98,4 +93,6 @@
     box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 8%, transparent);
     border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
   }
+  :global(html:not(.dark) .fd-shot-dark) { display: none; }
+  :global(html.dark .fd-shot-light) { display: none; }
 </style>

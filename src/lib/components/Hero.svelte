@@ -1,6 +1,5 @@
 <script lang="ts">
   import { assets } from '$app/paths';
-  import { theme } from '$lib/stores/theme';
   import { downloadStore, platformLabels, FALLBACK_URL } from '$lib/stores/download';
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
 </script>
@@ -57,7 +56,7 @@
               onclick={() => { if ($downloadStore) window.location.href = $downloadStore.url; }}
               class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold text-sm text-center transition-opacity hover:opacity-90 cursor-pointer"
               style="background: var(--accent); color: var(--navy)"
-            >Download for {platformLabels[$downloadStore.platform]}</button>
+            >Download</button>
           {:else}
             <a
               href={FALLBACK_URL}
@@ -123,12 +122,8 @@
             </div>
             <!-- screenshot -->
             <div class="relative">
-              <img
-                src="{assets}/screenshots/{$theme === 'dark' ? 'coding-workspaces-dark.png' : 'coding-workspaces-light.png'}"
-                alt="Kaiden — Agentic Coding Workspaces"
-                class="w-full block"
-                onerror={(e) => { (e.currentTarget as HTMLImageElement).src = `${assets}/screenshots/coding-workspaces-dark.png`; }}
-              />
+              <img src="{assets}/screenshots/coding-workspaces-dark.png" alt="Kaiden — Agentic Coding Workspaces" class="hero-shot-dark w-full block" />
+              <img src="{assets}/screenshots/coding-workspaces-light.png" alt="Kaiden — Agentic Coding Workspaces" class="hero-shot-light w-full block" />
               <div class="absolute inset-0 pointer-events-none" style="box-shadow: inset 0 0 0 1px var(--border)"></div>
             </div>
           </div>
@@ -142,3 +137,8 @@
     </div>
   </div>
 </section>
+
+<style>
+  :global(html:not(.dark) .hero-shot-dark) { display: none; }
+  :global(html.dark .hero-shot-light) { display: none; }
+</style>

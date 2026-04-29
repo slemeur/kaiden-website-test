@@ -77,7 +77,7 @@
           onclick={() => { if ($downloadStore) window.location.href = $downloadStore.url; }}
           class="ml-2 px-4 py-1.5 text-sm font-medium rounded-md transition-opacity hover:opacity-90 cursor-pointer"
           style="background: var(--accent); color: var(--navy)"
-        >Download for {platformLabels[$downloadStore.platform]}</button>
+        >Download</button>
       {:else}
         <a
           href={FALLBACK_URL}
