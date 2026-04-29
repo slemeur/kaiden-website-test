@@ -2,6 +2,7 @@
   const tabs = [
     {
       label: 'Desktop App',
+      prompt: false,
       steps: [
         { comment: '# Download from Website', cmd: 'click `Download` button on the website' },
         { comment: '# Or download from GitHub Releases', cmd: 'open https://github.com/openkaiden/prereleases/releases' },
@@ -10,6 +11,7 @@
     },
     {
       label: 'kdn CLI',
+      prompt: true,
       steps: [
         { comment: '# Requires Go 1.26+', cmd: 'go install github.com/openkaiden/kdn@latest' },
         { comment: '# Start a session', cmd: 'kdn start my-project && kdn terminal my-project' },
@@ -53,7 +55,7 @@
           <div>
             <div class="text-xs" style="color: #6491b0">{step.comment}</div>
             <div style="color: var(--accent)">
-              <span style="color: #4a6580">$ </span>{step.cmd}
+              {#if tabs[active].prompt}<span style="color: #4a6580">$ </span>{/if}{step.cmd}
             </div>
           </div>
         {/each}
