@@ -6,7 +6,7 @@
   const agents = [
     { name: 'OpenCode', provider: 'Ollama', active: true },
     { name: 'Claude Code', provider: 'Anthropic', active: false },
-    { name: 'Goose', provider: 'Block', active: false }
+    { name: 'Goose', provider: 'CNCF', active: false }
   ];
 
   const sessions = [
@@ -60,7 +60,7 @@
 
         <p class="mt-6 text-lg leading-relaxed max-w-xl" style="color: var(--text-secondary)">
           Kaiden runs your coding agents in isolated sandboxes and equips them with the models,
-          tools, and assets they need. Works locally or in your enterprise environment.
+          tools, and assets they need. Repeatable, preconfigured environments to iterate faster. Experiment safely. Works locally or in your enterprise environment.
           Built for developers, governed by your platform team.
         </p>
 
@@ -91,13 +91,23 @@
             macOS · Linux · Windows — free, open source
           </p>
           <div class="flex flex-wrap items-center gap-1.5">
-            <span class="text-xs" style="color: var(--text-muted)">Supports</span>
+            <span class="text-xs" style="color: var(--text-muted)">Supported Coding Agents : </span>
             {#each ['Claude Code', 'Goose', 'Cursor', 'OpenCode'] as agent}
               <span
                 class="text-xs px-2 py-0.5 rounded border font-mono"
                 style="border-color: var(--border); color: var(--text-secondary); background: var(--bg-subtle)"
               >{agent}</span>
             {/each}
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5">
+
+            <span class="text-xs" style="color: var(--text-muted)">Supports</span>
+              {#each ['Ramalama', 'Ollama','Gemini', 'Mistral', 'Anthropic', 'OpenAI', 'OpenShift AI'] as modelprovider}
+                <span
+                  class="text-xs px-2 py-0.5 rounded border font-mono"
+                  style="border-color: var(--border); color: var(--text-secondary); background: var(--bg-subtle)"
+                >{modelprovider}</span>
+              {/each}
           </div>
         </div>
       </div>
