@@ -1,5 +1,6 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme';
+  import { download, platformLabels, FALLBACK_URL } from '$lib/stores/download';
   import { assets, base } from '$app/paths';
   import { onMount } from 'svelte';
 
@@ -71,13 +72,21 @@
         <div class="w-8 h-8"></div>
       {/if}
 
-      <a
-        href="https://github.com/openkaiden/prereleases/releases"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ml-2 px-4 py-1.5 text-sm font-medium rounded-md transition-opacity hover:opacity-90"
-        style="background: var(--accent); color: var(--navy)"
-      >Download</a>
+      {#if $download}
+        <button
+          onclick={() => { if ($download) window.location.href = $download.url; }}
+          class="ml-2 px-4 py-1.5 text-sm font-medium rounded-md transition-opacity hover:opacity-90 cursor-pointer"
+          style="background: var(--accent); color: var(--navy)"
+        >Download for {platformLabels[$download.platform]}</button>
+      {:else}
+        <a
+          href={FALLBACK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-2 px-4 py-1.5 text-sm font-medium rounded-md transition-opacity hover:opacity-90"
+          style="background: var(--accent); color: var(--navy)"
+        >Download</a>
+      {/if}
     </div>
   </nav>
 </header>
