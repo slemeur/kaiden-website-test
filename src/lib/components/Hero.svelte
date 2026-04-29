@@ -1,21 +1,8 @@
 <script lang="ts">
   import { assets } from '$app/paths';
+  import { theme } from '$lib/stores/theme';
   const DOWNLOAD_URL = 'https://github.com/openkaiden/prereleases/releases';
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
-
-  const agents = [
-    { name: 'OpenCode', provider: 'Ollama', active: true },
-    { name: 'Claude Code', provider: 'Anthropic', active: false },
-    { name: 'Goose', provider: 'CNCF', active: false }
-  ];
-
-  const sessions = [
-    { name: 'api-refactor', model: 'claude-3.5-sonnet', status: 'running', pct: 62 },
-    { name: 'test-suite', model: 'claude-3.5-haiku', status: 'running', pct: 38 },
-    { name: 'docs-update', model: 'gemini-2.0-flash', status: 'stopped', pct: 0 }
-  ];
-
-  const navItems = ['Sessions', 'Agents', 'Models', 'MCP', 'Skills', 'Settings'];
 </script>
 
 <section class="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -112,88 +99,33 @@
         </div>
       </div>
 
-      <!-- right: UI mockup -->
+      <!-- right: screenshot -->
       <div class="flex-1 relative flex items-center justify-center">
-        <div class="relative w-full max-w-md">
-          <!-- mockup card -->
-          <div
-            class="rounded-2xl border shadow-2xl overflow-hidden font-mono text-[11px] select-none"
-            style="border-color: var(--border); background: var(--bg-card)"
-          >
+        <div class="relative w-full max-w-lg">
+          <!-- window frame -->
+          <div class="rounded-2xl border overflow-hidden select-none"
+            style="border-color: var(--border); box-shadow: 0 24px 80px rgba(0,0,0,0.18);">
             <!-- titlebar -->
-            <div
-              class="flex items-center gap-1.5 px-3 py-2 border-b"
-              style="background: var(--bg-subtle); border-color: var(--border)"
-            >
-              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              <span class="ml-2 text-[10px]" style="color: var(--text-muted)">
-                Kaiden — Agentic Coding Workspaces
-              </span>
+            <div class="flex items-center gap-1.5 px-4 py-3 border-b" style="background: var(--bg-subtle); border-color: var(--border)">
+              <span class="w-3 h-3 rounded-full bg-red-400"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+              <span class="w-3 h-3 rounded-full bg-green-400"></span>
+              <span class="ml-2 text-[11px] font-mono" style="color: var(--text-muted)">Kaiden — Agentic Coding Workspaces</span>
             </div>
-
-            <!-- sidebar + main -->
-            <div class="flex">
-              <!-- sidebar -->
-              <div class="w-36 border-r p-2 space-y-0.5" style="background: var(--bg-subtle); border-color: var(--border)">
-                {#each navItems as item}
-                  <div
-                    class="px-2 py-1 rounded text-[10px]"
-                    style={item === 'Sessions'
-                      ? 'background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); font-weight: 500'
-                      : 'color: var(--text-muted)'}
-                  >{item}</div>
-                {/each}
-              </div>
-
-              <!-- main -->
-              <div class="flex-1 p-3 space-y-2">
-                <!-- agent chips -->
-                <div class="flex gap-1.5 mb-3">
-                  {#each agents as a}
-                    <div
-                      class="px-2 py-0.5 rounded-full text-[9px] border"
-                      style={a.active
-                        ? 'border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent)'
-                        : 'border-color: var(--border); color: var(--text-muted)'}
-                    >{a.name}</div>
-                  {/each}
-                </div>
-
-                <!-- session cards -->
-                {#each sessions as s}
-                  <div class="p-2 rounded-lg border space-y-1" style="border-color: var(--border); background: var(--bg)">
-                    <div class="flex items-center justify-between">
-                      <span class="font-medium text-[10px]" style="color: var(--text-primary)">{s.name}</span>
-                      <span
-                        class="text-[9px] px-1.5 py-0.5 rounded-full"
-                        style={s.status === 'running'
-                          ? 'background: color-mix(in srgb, #10b981 10%, transparent); color: #10b981'
-                          : 'background: var(--bg-subtle); color: var(--text-muted)'}
-                      >{s.status}</span>
-                    </div>
-                    <div class="text-[9px]" style="color: var(--text-muted)">{s.model}</div>
-                    {#if s.status === 'running'}
-                      <div class="w-full h-0.5 rounded-full overflow-hidden" style="background: var(--bg-subtle)">
-                        <div
-                          class="h-full rounded-full"
-                          style="width: {s.pct}%; background: var(--accent)"
-                        ></div>
-                      </div>
-                    {/if}
-                  </div>
-                {/each}
-              </div>
+            <!-- screenshot -->
+            <div class="relative">
+              <img
+                src="{assets}/screenshots/{$theme === 'dark' ? 'coding-workspaces-dark.png' : 'coding-workspaces-light.png'}"
+                alt="Kaiden — Agentic Coding Workspaces"
+                class="w-full block"
+                on:error={(e) => { (e.currentTarget as HTMLImageElement).src = `${assets}/screenshots/coding-workspaces-dark.png`; }}
+              />
+              <div class="absolute inset-0 pointer-events-none" style="box-shadow: inset 0 0 0 1px var(--border)"></div>
             </div>
           </div>
-
           <!-- mascot badge -->
-          <div
-            class="absolute -bottom-6 -right-6 w-24 h-24 rounded-2xl border-2 shadow-xl p-1 flex items-center justify-center"
-            style="border-color: var(--border); background: var(--bg-card)"
-          >
-            <img src="{assets}/icon.png" alt="Kaiden mascot" width="80" height="80" class="rounded-xl" />
+          <div class="absolute -bottom-5 -right-5">
+            <img src="{assets}/icon.png" alt="Kaiden" width="72" height="72" style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.22)" />
           </div>
         </div>
       </div>

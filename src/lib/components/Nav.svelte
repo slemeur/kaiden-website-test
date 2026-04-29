@@ -22,7 +22,7 @@
 >
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="{base}" class="flex items-center gap-2.5">
-      <img src="{assets}/icon.png" alt="Kaiden" width="32" height="32" class="rounded-lg" />
+      <img src="{assets}/icon.png" alt="Kaiden" width="32" height="32" style="border-radius: 22%; box-shadow: 0 2px 8px rgba(0,0,0,0.18)" />
       <span class="font-semibold tracking-tight text-[15px]" style="color: var(--text-primary)">
         kaiden
       </span>

@@ -1,10 +1,5 @@
 <script lang="ts">
-  const stats = [
-    { label: 'License', value: 'Apache 2.0' },
-    { label: 'Podman Desktop downloads', value: '4M+' },
-    { label: 'Platform', value: 'macOS · Linux · Win' },
-    { label: 'Agents', value: '4 supported' }
-  ];
+  import { assets } from '$app/paths';
 
   const repos = [
     { label: 'openkaiden/kaiden', href: 'https://github.com/openkaiden/kaiden' },
@@ -57,14 +52,55 @@
         </div>
       </div>
 
-      <!-- right: stats -->
-      <div class="grid grid-cols-2 gap-4">
-        {#each stats as stat}
-          <div class="p-6 rounded-xl border" style="border-color: var(--border); background: var(--bg-card)">
-            <p class="text-[11px] font-mono uppercase tracking-widest mb-1" style="color: var(--text-muted)">{stat.label}</p>
-            <p class="text-lg font-semibold" style="color: var(--text-primary)">{stat.value}</p>
-          </div>
-        {/each}
+      <!-- right: podman + heart + kaiden -->
+      <div class="flex items-center justify-center gap-6">
+
+        <!-- Kaiden -->
+        <div class="flex flex-col items-center gap-3">
+          <img
+            src="{assets}/icon.png"
+            alt="Kaiden"
+            width="96"
+            height="96"
+            style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
+          />
+          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Kaiden</span>
+        </div>
+
+        <!-- heart -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#f43f5e" style="flex-shrink:0; margin-bottom: 20px">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <!-- Podman Desktop -->
+        <div class="flex flex-col items-center gap-3">
+          <img
+            src="https://podman-desktop.io/img/logo.svg"
+            alt="Podman Desktop"
+            width="96"
+            height="96"
+            style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
+          />
+          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Podman Desktop</span>
+        </div>
+
+        <!-- heart -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#f43f5e" style="flex-shrink:0; margin-bottom: 20px">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <!-- Podman -->
+        <div class="flex flex-col items-center gap-3">
+          <img
+            src="https://podman.io/logos/optimized/podman-3-logo-266w-253h.webp"
+            alt="Podman"
+            width="96"
+            height="96"
+            style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
+          />
+          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Podman</span>
+        </div>
+
       </div>
 
     </div>

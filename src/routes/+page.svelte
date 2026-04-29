@@ -1,7 +1,8 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Hero from '$lib/components/Hero.svelte';
-  import WhyKaiden from '$lib/components/WhyKaiden.svelte';
+  import ForDevelopers from '$lib/components/ForDevelopers.svelte';
+  import CorePrinciples from '$lib/components/CorePrinciples.svelte';
   import HowItWorks from '$lib/components/HowItWorks.svelte';
   import Capabilities from '$lib/components/Capabilities.svelte';
   import ForPlatformEngineers from '$lib/components/ForPlatformEngineers.svelte';
@@ -39,7 +40,8 @@
 <Nav />
 <main>
   <Hero />
-  <WhyKaiden />
+  <ForDevelopers />
+  <CorePrinciples />
   <HowItWorks />
   <Capabilities />
   <ForPlatformEngineers />
