@@ -1,7 +1,7 @@
 <script lang="ts">
   import { assets } from '$app/paths';
   import { theme } from '$lib/stores/theme';
-  import { download, platformLabels, FALLBACK_URL } from '$lib/stores/download';
+  import { downloadStore, platformLabels, FALLBACK_URL } from '$lib/stores/download';
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
 </script>
 
@@ -52,12 +52,12 @@
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row items-center lg:items-start gap-3">
-          {#if $download}
+          {#if $downloadStore}
             <button
-              onclick={() => { if ($download) window.location.href = $download.url; }}
+              onclick={() => { if ($downloadStore) window.location.href = $downloadStore.url; }}
               class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold text-sm text-center transition-opacity hover:opacity-90 cursor-pointer"
               style="background: var(--accent); color: var(--navy)"
-            >Download for {platformLabels[$download.platform]}</button>
+            >Download for {platformLabels[$downloadStore.platform]}</button>
           {:else}
             <a
               href={FALLBACK_URL}
@@ -84,7 +84,7 @@
         <div class="mt-5 flex flex-col gap-2">
           <p class="text-xs" style="color: var(--text-muted)">
             macOS · Linux · Windows — free, open source
-            {#if $download?.version}&nbsp;·&nbsp;{$download.version}{/if}
+            {#if $downloadStore?.version}&nbsp;·&nbsp;{$downloadStore.version}{/if}
           </p>
           <div class="flex flex-wrap items-center gap-1.5">
             <span class="text-xs" style="color: var(--text-muted)">Supported Coding Agents : </span>

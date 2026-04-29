@@ -51,7 +51,7 @@ function pickAsset(
   }
 }
 
-export const download = readable<DownloadInfo | null>(null, set => {
+export const downloadStore = readable<DownloadInfo | null>(null, set => {
   if (typeof window === 'undefined') return;
 
   const platform = detectPlatform();
