@@ -3,7 +3,7 @@
     {
       n: '01',
       title: 'Isolated sandboxes',
-      body: 'Each agent session runs in its own container or VM via Podman. Reproducible, ephemeral, and air-gapped from your host environment by default.',
+      body: 'Each agent session runs in its own container powered by Podman or in a microVM powered by libkrun. Hardware-isolated from your host, reproducible, and ephemeral by default.',
       icon: `<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>`
     },
     {

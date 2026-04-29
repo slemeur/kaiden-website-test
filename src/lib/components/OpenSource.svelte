@@ -23,6 +23,13 @@
           with over 4 million downloads.
           Same foundations, same philosophy: open source, extensible, and yours to run however you want.
         </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-secondary)">
+          The sandboxes that protect your agent sessions are built backed by
+          <a href="https://podman.io" target="_blank" rel="noopener noreferrer" class="podman-link">Podman</a>
+          and
+          <a href="https://github.com/containers/libkrun" target="_blank" rel="noopener noreferrer" class="podman-link">libkrun</a>
+          microVMs — the same stacks trusted by millions of developers, now securing your AI agents.
+        </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
           <a

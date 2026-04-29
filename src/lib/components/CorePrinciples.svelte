@@ -2,7 +2,7 @@
   const pillars = [
     {
       title: 'Safe by design',
-      body: 'AI agents touch your code, your tools, your credentials. One bad session can cause real damage. Kaiden runs every agent in its own sandbox, so the rest of your system stays untouched.',
+      body: 'AI agents touch your code, your tools, your credentials. One bad session can cause real damage. Kaiden runs every agent in its own sandbox, a container backed by Podman or a microVM powered by libkrun, so the rest of your system stays untouched.',
       icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>`
     },
     {
