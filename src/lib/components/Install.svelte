@@ -1,18 +1,18 @@
 <script lang="ts">
   const tabs = [
     {
-      label: 'kdn CLI',
+      label: 'Desktop App',
       steps: [
-        { comment: '# Requires Go 1.21+', cmd: 'go install github.com/openkaiden/kdn@latest' },
-        { comment: '# Register your first workspace', cmd: 'kdn init' },
-        { comment: '# Start a session', cmd: 'kdn start' }
+        { comment: '# Download from Website', cmd: 'click `Download` button on the website' },
+        { comment: '# Or download from GitHub Releases', cmd: 'open https://github.com/openkaiden/prereleases/releases' },
+        { comment: '# Available for macOS, Linux, and Windows', cmd: '# .dmg  ·  .AppImage  ·  .exe' }
       ]
     },
     {
-      label: 'Desktop App',
+      label: 'kdn CLI',
       steps: [
-        { comment: '# Download from GitHub Releases', cmd: 'open https://github.com/openkaiden/prereleases/releases' },
-        { comment: '# Available for macOS, Linux, and Windows', cmd: '# .dmg  ·  .AppImage  ·  .exe' }
+        { comment: '# Requires Go 1.26+', cmd: 'go install github.com/openkaiden/kdn@latest' },
+        { comment: '# Start a session', cmd: 'kdn start my-project && kdn terminal my-project' },
       ]
     }
   ];
@@ -58,8 +58,7 @@
           </div>
         {/each}
         <div class="mt-4" style="color: #6491b0">
-          <span style="color: #22c55e">✓</span> Ready. Open Kaiden or run
-          <span style="color: var(--accent)">kdn start</span> to launch your first session.
+          <span style="color: #22c55e">✓</span> Ready. Happy coding!
         </div>
       </div>
     </div>
