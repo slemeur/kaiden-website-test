@@ -1,7 +1,10 @@
 <script lang="ts">
   import { assets } from '$app/paths';
-  import { downloadStore, platformLabels, FALLBACK_URL } from '$lib/stores/download';
+  import { downloadStore, FALLBACK_URL } from '$lib/stores/download';
+  import DownloadModal from '$lib/components/DownloadModal.svelte';
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
+
+  let modalOpen = $state(false);
 </script>
 
 <section class="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -53,7 +56,7 @@
         <div class="mt-8 flex flex-col sm:flex-row items-center lg:items-start gap-3">
           {#if $downloadStore}
             <button
-              onclick={() => { if ($downloadStore) window.location.href = $downloadStore.url; }}
+              onclick={() => (modalOpen = true)}
               class="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold text-sm text-center transition-opacity hover:opacity-90 cursor-pointer"
               style="background: var(--accent); color: var(--navy)"
             >Download</button>
@@ -137,6 +140,8 @@
     </div>
   </div>
 </section>
+
+<DownloadModal bind:open={modalOpen} />
 
 <style>
   :global(html:not(.dark) .hero-shot-dark) { display: none; }

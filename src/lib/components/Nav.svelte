@@ -1,11 +1,13 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme';
-  import { downloadStore, platformLabels, FALLBACK_URL } from '$lib/stores/download';
+  import { downloadStore, FALLBACK_URL } from '$lib/stores/download';
+  import DownloadModal from '$lib/components/DownloadModal.svelte';
   import { assets, base } from '$app/paths';
   import { onMount } from 'svelte';
 
   let scrolled = $state(false);
   let mounted = $state(false);
+  let modalOpen = $state(false);
 
   onMount(() => {
     mounted = true;
@@ -74,7 +76,7 @@
 
       {#if $downloadStore}
         <button
-          onclick={() => { if ($downloadStore) window.location.href = $downloadStore.url; }}
+          onclick={() => (modalOpen = true)}
           class="ml-2 px-4 py-1.5 text-sm font-medium rounded-md transition-opacity hover:opacity-90 cursor-pointer"
           style="background: var(--accent); color: var(--navy)"
         >Download</button>
@@ -90,3 +92,5 @@
     </div>
   </nav>
 </header>
+
+<DownloadModal bind:open={modalOpen} />
