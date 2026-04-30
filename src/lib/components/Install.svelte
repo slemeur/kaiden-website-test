@@ -14,7 +14,7 @@
       prompt: true,
       steps: [
         { comment: '# Requires Go 1.26+', cmd: 'go install github.com/openkaiden/kdn@latest' },
-        { comment: '# Start a session', cmd: 'kdn start my-project && kdn terminal my-project' },
+        { comment: '# Start a session', cmd: 'kdn init && kdn terminal my-project' },
       ]
     }
   ];
