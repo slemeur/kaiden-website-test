@@ -32,8 +32,7 @@ function pickAsset(
   switch (platform) {
     case 'mac':
       return (
-        assets.find(a => a.name.endsWith('-universal.dmg'))?.browser_download_url ??
-        assets.find(a => a.name.endsWith('.dmg') && !a.name.endsWith('.blockmap'))?.browser_download_url ??
+        assets.find(a => a.name.includes('arm64') && a.name.endsWith('.dmg'))?.browser_download_url ??
         FALLBACK_URL
       );
     case 'windows':
