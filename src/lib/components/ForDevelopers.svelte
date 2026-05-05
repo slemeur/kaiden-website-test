@@ -32,19 +32,19 @@
   ];
 </script>
 
-<section class="py-24 px-6 border-t" style="background: var(--bg-subtle); border-color: var(--border)">
+<section class="py-24 px-6 border-t overflow-x-clip" style="background: var(--bg-subtle); border-color: var(--border)">
   <div class="max-w-6xl mx-auto">
 
     <div class="mb-14">
       <p class="text-[11px] font-mono uppercase tracking-widest mb-3" style="color: var(--accent-text)">Why Kaiden</p>
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight whitespace-nowrap" style="color: var(--text-primary)">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight" style="color: var(--text-primary)">
         Built for developers juggling multiple agents
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       {#each pillars as pillar}
-        <div class="card rounded-2xl border overflow-hidden flex flex-col" style="background: var(--bg-card); border-color: var(--border)">
+        <div class="card rounded-2xl border overflow-hidden flex flex-col min-w-0" style="background: var(--bg-card); border-color: var(--border)">
           <!-- screenshot -->
           <div class="border-b overflow-hidden" style="border-color: var(--border)">
             <!-- titlebar -->

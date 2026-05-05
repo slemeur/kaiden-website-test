@@ -17,14 +17,15 @@
   });
 </script>
 
-<header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-200 {scrolled
-    ? 'backdrop-blur border-b'
-    : ''}"
-  style="background: {scrolled ? 'color-mix(in srgb, var(--bg) 90%, transparent)' : 'transparent'}; border-color: var(--border);"
->
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="{base}" class="flex items-center gap-2.5">
+<header class="fixed top-0 left-0 right-0 z-50">
+  <!-- background layer: blur + tint are isolated here so they don't affect child rendering -->
+  <div
+    class="absolute inset-0 transition-all duration-200 {scrolled ? 'backdrop-blur border-b' : ''}"
+    style="background: {scrolled ? 'color-mix(in srgb, var(--bg) 90%, transparent)' : 'transparent'}; border-color: var(--border);"
+    aria-hidden="true"
+  ></div>
+  <nav class="relative max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="{base}" class="flex items-center gap-2.5 shrink-0">
       <img src="{assets}/icon.png" alt="Kaiden" width="32" height="32" style="border-radius: 22%; box-shadow: 0 2px 8px rgba(0,0,0,0.18)" />
       <span class="font-semibold tracking-tight text-[15px]" style="color: var(--text-primary)">
         kaiden
@@ -36,7 +37,7 @@
         href="https://github.com/openkaiden/kaiden"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-3 py-1.5 text-sm transition-colors"
+        class="hidden sm:block px-3 py-1.5 text-sm transition-colors"
         style="color: var(--text-secondary)"
         onmouseenter={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
         onmouseleave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
@@ -45,7 +46,7 @@
         href="https://github.com/openkaiden"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-3 py-1.5 text-sm transition-colors"
+        class="hidden sm:block px-3 py-1.5 text-sm transition-colors"
         style="color: var(--text-secondary)"
         onmouseenter={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
         onmouseleave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
