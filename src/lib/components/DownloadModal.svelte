@@ -16,7 +16,7 @@
   };
 
   const assetLabels: Record<string, string> = {
-    mac: 'Universal binary (.dmg)',
+    mac: 'Apple Silicon (.dmg)',
     windows: '64-bit installer (.exe)',
     linux: 'Flatpak (.flatpak)',
   };
