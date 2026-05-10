@@ -1,6 +1,6 @@
 import { readable } from 'svelte/store';
 
-const REPO = 'openkaiden/prereleases';
+const REPO = 'openkaiden/kaiden';
 export const FALLBACK_URL = `https://github.com/${REPO}/releases`;
 
 export type Platform = 'mac' | 'windows' | 'linux';
@@ -55,14 +55,12 @@ export const downloadStore = readable<DownloadInfo | null>(null, set => {
 
   const platform = detectPlatform();
 
-  fetch(`https://api.github.com/repos/${REPO}/releases?per_page=1`)
+  fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
     .then(r => {
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       return r.json();
     })
-    .then((releases: Array<{ tag_name: string; assets: Array<{ name: string; browser_download_url: string }> }>) => {
-      const release = releases[0];
-      if (!release) return;
+    .then((release: { tag_name: string; assets: Array<{ name: string; browser_download_url: string }> }) => {
       const url = pickAsset(release.assets ?? [], platform);
       if (url === FALLBACK_URL) return;
       set({ url, platform, version: release.tag_name ?? '' });
