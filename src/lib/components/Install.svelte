@@ -1,7 +1,7 @@
 <script lang="ts">
   const steps = [
     { comment: '# Download from Website', cmd: 'click `Download` button on the website' },
-    { comment: '# Or download from GitHub Releases', cmd: 'open https://github.com/openkaiden/prereleases/releases' },
+    { comment: '# Or download from GitHub Releases', cmd: 'open https://github.com/openkaiden/kaiden/releases' },
     { comment: '# Available for macOS, Linux, and Windows', cmd: '# .dmg  ·  .AppImage  ·  .exe' }
   ];
 </script>

@@ -5,7 +5,7 @@
       group: 'Project',
       items: [
         { label: 'GitHub', href: 'https://github.com/openkaiden/kaiden' },
-        { label: 'Releases', href: 'https://github.com/openkaiden/prereleases/releases' },
+        { label: 'Releases', href: 'https://github.com/openkaiden/kaiden/releases' },
         { label: 'kdn CLI', href: 'https://github.com/openkaiden/kdn' },
         { label: 'MCP Registry', href: 'https://github.com/openkaiden/mcp-registry-online' }
       ]
